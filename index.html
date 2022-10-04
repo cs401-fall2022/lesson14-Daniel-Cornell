@@ -1,1 +1,163 @@
-<h1>Test</h1>
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>TypeScript Introduction</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+    <body>
+        <h1>TypeScript For Dummies</h1>
+
+        <div id="introduction">
+            TypeScript in its most basic form is JavaScript with the ability to make variables strongly typed.
+            This allows for the creation of JavaScript liek applicaitons that have more strict typing like C#,
+            Java, etc.
+        </div>
+
+        <div class="textBlock">
+            <h3>
+                TypeScript Basics
+            </h3>
+            <p>
+                TypeScript is able to use inference of types to ensure that code later on is following the same
+                type for the assigned variable. An example of creating a basic string variable is shown below usign the : operator
+            </p>
+            <div class="codeExample">
+                let exampleStringVariable:string = "This is a String";<br>
+                //or<br>
+                let exampleStringVariable:string = 'This is a String';
+            </div>
+            <p>
+                TypeScript also allows for inference of types at the time of initialization by usign the let keyword.
+                The code below is infered to have a type of variableName:string due to being set to a string value at
+                initialization.
+            </p>
+            <div class="codeExample">
+                let variableName = "This is an inferred variable";<br>
+            </div>
+        </div>
+
+        <div class="textBlock">
+            <h3>Creating Types</h3>
+            <p>
+                TypeScript allows for the creation of "types" which are essentially object definitions in other
+                programming lnaguages. This allows for "objects" that are more strictly defined than typical JSON
+                objects. The definition of types is the same as the definition of JSON objects, an examples is 
+                shown below.
+            </p>
+            <div class="codeExample">
+                const testObject {<br>
+                    &emsp;objName: "String Object Name",<br>
+                    &emsp;objId: 100<br>
+                }
+            </div>
+            <p>
+                TypeScript also allows for the creation of interfaces through the interface keyword. Interfaces help
+                provide warnings, but will not cause a crash if not followed.
+            </p>
+            <div class="codeExample">
+                interface Person{<br>
+                    &emsp;name: string,<br>
+                    &emsp;age: number<br>
+                }
+            </div>
+        </div>
+
+        <div class="textBlock">
+            <h3>Creating Classes</h3>
+            <p>
+                TypeScript also allows for the creation of classes with defined tyes for constructors and methods as
+                shown below in the code example from TypeScript for JavaScript Programmers
+            </p>
+            <div class="codeExample">
+                interface User {<br>
+                    &emsp;name: string;<br>
+                    &emsp;id: number;<br>
+                }<br>
+                <br>
+                class UserAccount {<br>
+                    &emsp;name: string;<br>
+                    &emsp;id: number;<br>
+                   
+                    &emsp;constructor(name: string, id: number) {<br>
+                        &emsp;&emsp;this.name = name;<br>
+                        &emsp;&emsp;this.id = id;<br>
+                    &emsp;}<br>
+                }<br>
+                <br> 
+                const user: User = new UserAccount("Murphy", 1);
+            </div>
+            <p>
+                Functions can also have types defined for both return and parameters for functions
+            </p>
+            <div class="codeExample">
+                function functionWithReturn(): string { }<br>
+                <br>
+                function functionWithParam(name: string) { }
+            </div>
+        </div>
+
+        <div class="textBlock">
+            <h3>Union Types</h3>
+            <p>
+                TypeScript allows programers to define their own "types" through the sue of the type keyword and | union operator. 
+                These programmer defined types are in a lot of ways similar to defining enumaerations in C# and Java. An example of 
+                a few programmer designed types are shown below.
+            </p>
+            <div class="codeExample">
+                type booleanType = true | false;<br>
+                type allowedNames = "Jane" | "John" | "Daniel" | "Beth";<br>
+                type multiplesOfFourToTwenty = 0 | 4 | 8 | 12 | 16 | 20;
+            </div>
+            <p>
+                The union operator (|) can also be used to allow a funciton to accept multiple types as input. For example the code below would
+                allow for both a string or a number to be taken as the parameter
+            </p>
+            <div class="codeExample">
+                function stringNum(val: string | number) { }
+            </div>
+            <p>
+                the typeof keyword is used often in TypeScript to help determine if an input variable is of the correct type. Ane example of
+                checking if the type is a string is shown below
+            </p>
+            <div class="codeExample">
+                if(typeof obj === "string") { //do something }
+            </div>
+        </div>
+
+        <div class="textBlock">
+            <h3>Generics</h3>
+            <p>
+                TypeScript allowsfor creation of generic types, just like C# and Java. These generics can be used similarly to Java to help 
+                create interfaces and objects. An example of a generic interface is shown below.
+            </p>
+            <div class="codeExample">
+                interface GenericInterface &lt;Type><br>
+                &emsp;add: (obj: Type) => void;<br>
+                }<br><br>
+                declare const genericDec: GenericInterface&lt;string><br>
+                <br>
+                const obj = genericDec.get(); // obj is a string due to above decleration
+            </div>
+        </div>
+
+        <div class="textBlock">
+            <h3>Structural Typing</h3>
+            <p>
+                At the core of TypeScript is its structural typing system. Structural typing is based on the "shape" of a value.
+                The shape can generally be thought of as two objects having the same fields being the same type of object. It is 
+                better shown through the example below. Note that an interface or a class could be used interchangably in this example
+            </p>
+            <div class="codeExample">
+                interface User { // Interface for a User Object<br>
+                    &emsp;name: string;<br>
+                    &emsp;id: number;<br>
+                }<br>
+                <br>
+                const exampleUser = { name: "Daniel", id 1234 } // Creates a user object through structural typing<br>
+                // even though examplUser isn't explicitly told to be a User object it will become one based on the shape
+            </div>
+        </div>
+    </body>
+</html>
