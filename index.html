@@ -7,11 +7,14 @@
     </head>
 
     <body>
-        <h1>TypeScript For Dummies</h1>
+        <img src="/img/logo.png" alt="TypeScript Logo">
+        <div id="header">
+            <h1>TypeScript For Dummies</h1> 
+        </div>
 
         <div id="introduction">
             TypeScript in its most basic form is JavaScript with the ability to make variables strongly typed.
-            This allows for the creation of JavaScript liek applicaitons that have more strict typing like C#,
+            This allows for the creation of JavaScript like applications that have more strict typing similar to what is found in C#,
             Java, etc.
         </div>
 
@@ -20,8 +23,8 @@
                 TypeScript Basics
             </h3>
             <p>
-                TypeScript is able to use inference of types to ensure that code later on is following the same
-                type for the assigned variable. An example of creating a basic string variable is shown below usign the : operator
+                TypeScript is able to use type inference to ensure that code later on is following the same
+                type for the assigned variable. An example of creating a basic string variable is shown below using the : operator
             </p>
             <div class="codeExample">
                 let exampleStringVariable:string = "This is a String";<br>
@@ -155,8 +158,9 @@
                     &emsp;id: number;<br>
                 }<br>
                 <br>
-                const exampleUser = { name: "Daniel", id 1234 } // Creates a user object through structural typing<br>
-                // even though examplUser isn't explicitly told to be a User object it will become one based on the shape
+                // Creates a user object through structural typing<br>
+                const exampleUser = { name: "Daniel", id: 1234 }<br>
+                /* even though exampleUser isn't explicitly told to be a User object it will become one based on the shape */
             </div>
         </div>
     </body>

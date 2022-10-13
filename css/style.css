@@ -1,6 +1,6 @@
 h1{
     font-family: 'Courier New', Courier, monospace;
-    color: #4d4a4a;
+    color: #271d1d;
     padding: 10px;
     width: 30%;
     margin: auto;
@@ -28,6 +28,7 @@ h1{
     width: 80%;
     background-color: aliceblue;
     padding: 10px;
+    border-radius: 5px;
 }
 
 .textBlock p{
@@ -41,4 +42,16 @@ h3{
     width: 150px;
     padding: 5px;
     text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+img{
+    width: 70px;
+    float: left;
+    margin-left: 30%;
+    margin-top: 10px;
+}
+
+body{
+    background-color: #bdc4dd;
 }
